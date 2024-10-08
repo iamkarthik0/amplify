@@ -1,4 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+
+images:{
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'amplify-amplifytest-singh-amplifyteamdrivebucket28-q9oral1ofnhe.s3.ap-south-1.amazonaws.com',
+            port: '',
+            pathname: '/profile-pictures/**',
+          },
+      ],
+}   
+};
 
 export default nextConfig;
