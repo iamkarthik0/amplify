@@ -28,7 +28,7 @@ export default function FileUpload() {
           options: { validateObjectExistence: true },
         });
         const imageUrl = url.toString();
-
+        console.log(imageUrl);
         setUploadedImageUrl(imageUrl);
       }
     } catch (error) {
@@ -40,7 +40,11 @@ export default function FileUpload() {
     <div>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
-      <Image src={uploadedImageUrl || "/"} width={500} height={500} alt="sss" />
+      {uploadedImageUrl && (
+        <>
+          <Image src={uploadedImageUrl} width={500} height={500} alt="sss" />
+        </>
+      )}
     </div>
   );
 }
