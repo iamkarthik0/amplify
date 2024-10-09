@@ -5,7 +5,7 @@ import { generateClient } from "aws-amplify/data";
 
 const client = generateClient<Schema>();
 
-export default function TodoList(props: any) {
+export default function TodoList() {
 
   const [todos, setTodos] = useState<Schema["Todo"]["type"][]>([]);
 
@@ -16,7 +16,7 @@ export default function TodoList(props: any) {
     });
   };
   const fetchTodos = async () => {
-    const { data: items, errors } = await client.models.Todo.list();
+    const { data: items } = await client.models.Todo.list();
     setTodos(items);
   };
 
